@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/quizbgcolor"
+    tools:context=".view.QuizActivity">
+
+    <TextView
+        android:id="@+id/tvcurrntqueno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_12sdp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="7" />
+
+    <TextView
+        android:id="@+id/tvslsh"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="/"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tvcurrntqueno"
+        app:layout_constraintStart_toEndOf="@id/tvcurrntqueno"
+        app:layout_constraintTop_toTopOf="@id/tvcurrntqueno" />
+
+    <TextView
+        android:id="@+id/tvoutno"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tvslsh"
+        app:layout_constraintStart_toEndOf="@id/tvslsh"
+        app:layout_constraintTop_toTopOf="@id/tvslsh"
+        tools:text="7" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cvMain"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_120sdp"
+        android:layout_margin="@dimen/_30sdp"
+        app:cardCornerRadius="@dimen/_12sdp"
+        app:layout_constraintTop_toBottomOf="@+id/tvTimer"
+        tools:layout_editor_absoluteX="39dp">
+
+        <LinearLayout
+            android:id="@+id/llInside"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_10sdp">
+
+            <TextView
+                android:id="@+id/tvQuestn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!--    <ProgressBar-->
+    <!--        android:id="@+id/pb"-->
+    <!--        android:layout_width="@dimen/_50sdp"-->
+    <!--        android:layout_height="@dimen/_50sdp"-->
+    <!--        android:layout_marginTop="@dimen/_18sdp"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/tvoutno"-->
+    <!--        app:layout_constraintStart_toStartOf="@+id/tvcurrntqueno"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/tvcurrntqueno" />-->
+
+    <TextView
+        android:id="@+id/tvTimer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:textSize="@dimen/_22ssp"
+        app:layout_constraintEnd_toEndOf="@+id/tvoutno"
+        app:layout_constraintStart_toStartOf="@+id/tvcurrntqueno"
+        app:layout_constraintTop_toBottomOf="@+id/tvcurrntqueno"
+        tools:text="30" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvOptions"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="@dimen/_30sdp"
+        android:layout_marginBottom="@dimen/_8sdp"
+        app:layout_constraintBottom_toTopOf="@+id/btnext"
+        app:layout_constraintTop_toBottomOf="@+id/cvMain" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btnext"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cornerRadius="@dimen/_12sdp"
+        android:text="@string/btn_next"
+        android:textAllCaps="false"
+        android:textStyle="bold"
+        android:textSize="@dimen/_15ssp"
+        android:backgroundTint="@color/startscreenbg"
+        android:layout_marginStart="@dimen/_12sdp"
+        android:layout_marginEnd="@dimen/_12sdp"
+        android:padding="@dimen/_8sdp"
+        android:layout_marginBottom="@dimen/_30sdp"
+        app:layout_constraintBottom_toBottomOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>

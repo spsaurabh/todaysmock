@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Todays Mock</string>
+    <string name="lbl_entername">Enter your name</string>
+    <string name="btn_start">Start</string>
+    <string name="btn_viewldebrd">View Leaderboard</string>
+    <string name="msg_entrname">Please Enter Your Name</string>
+    <string name="btn_next">Next</string>
+    <string name="msg_chck_internet">Please Check Your Internet Connection</string>
+    <string name="msg_pls_try_ltr">Something went wrong,please try again</string>
+    <string name="msg_test_finishe">Test Finished</string>
+</resources>
