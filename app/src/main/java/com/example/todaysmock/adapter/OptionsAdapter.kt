@@ -1,16 +1,12 @@
 package com.example.todaysmock.adapter
 
 import android.content.Context
-import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
-import androidx.core.graphics.drawable.DrawableCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.example.todaysmock.R
 import com.example.todaysmock.databinding.AdapteroptionsBinding
-import com.example.todaysmock.model.Item
 
 class OptionsAdapter(val context: Context,val answerList:ArrayList<String>,
                      var onItemClicked: ((clickedItem: Int,String) -> Unit)):
@@ -34,12 +30,15 @@ class OptionsAdapter(val context: Context,val answerList:ArrayList<String>,
                 selectedPosition=position
                 notifyDataSetChanged()
             }
+            if(selectedPosition==position){
+                cvAnswer.setCardBackgroundColor(context.getColor(R.color.selectedadapter))
+                ivTick.visibility=View.VISIBLE
+                selectedPosition=-1
+            }else{
+                holder.binding.cvAnswer.setCardBackgroundColor(context.getColor(R.color.white))
+                ivTick.visibility=View.GONE
+            }
         }
-        if(selectedPosition==position){
-            holder.binding.cvAnswer.setCardBackgroundColor(context.getColor(R.color.selectedadapter))
-            selectedPosition=-1
-        }else{
-            holder.binding.cvAnswer.setCardBackgroundColor(context.getColor(R.color.white))
-        }
+
     }
 }
